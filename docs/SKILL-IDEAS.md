@@ -1,5 +1,9 @@
 # Skill designs: research, vision, roadmap
 
+> **Status: implemented 2026-07-09** — see [`research/`](../research/SKILL.md),
+> [`vision/`](../vision/SKILL.md), [`roadmap/`](../roadmap/SKILL.md). Kept as
+> the design rationale behind those skills.
+
 Design notes for the next three skills, researched and drafted with Claude Fable 5
 (2026-07-09). Each section is written so a future session — on any model — can
 implement the skill from this document alone, following the conventions of the

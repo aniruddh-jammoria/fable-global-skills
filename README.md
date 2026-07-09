@@ -8,6 +8,14 @@ Most projects accumulate documentation debt: the README goes stale, the changelo
 
 ## The skills
 
+### Discovery
+
+| Skill | What it does |
+|---|---|
+| [`/research`](research/SKILL.md) | Mines Reddit, Hacker News, forums, GitHub issues, and reviews for user pain points and the existing-solution landscape — scored on frequency/intensity/willingness-to-pay/specificity, every claim backed by a verbatim linked quote — into `docs/research/`. |
+| [`/vision`](vision/SKILL.md) | Consolidates accumulated evidence into themes and drafts `docs/VISION.md` — a customer-outcome vision with a press-release narrative, positioning statement, and explicit anti-vision. Revisions are appended, never silent. |
+| [`/roadmap`](roadmap/SKILL.md) | Diffs vision against current product state and pain-point scores to pick 4–5 force-ranked big rocks (customer outcomes, Now/Next/Later) in `docs/ROADMAP.md`, with an explicit "Not now" cut list. |
+
 ### Documentation
 
 | Skill | What it does |
@@ -27,14 +35,15 @@ Most projects accumulate documentation debt: the README goes stale, the changelo
 | [`/release`](release/SKILL.md) | Shipping a milestone | Pre-flight checks, semver bump proposed from the changelog, tag, GitHub release with human-readable notes. |
 | [`/announce`](announce/SKILL.md) | Sharing publicly | Drafts platform-native posts (LinkedIn, Twitter/X, Reddit, Show HN) from the repo's own record. Drafts only — it never posts anything. |
 
-They chain rather than duplicate: `wrap-session` invokes `changelog` and `devlog`; `release` defers to `wrap-session` for a dirty tree; `announce` mines what the others wrote. Each convention lives in exactly one file.
+They chain rather than duplicate: `wrap-session` invokes `changelog` and `devlog`; `release` defers to `wrap-session` for a dirty tree; `announce` mines what the others wrote; `research` feeds `vision` feeds `roadmap`, whose rocks become `spec` inputs. Each convention lives in exactly one file, and a traceability thread runs end to end: verbatim user quote → scored pain point → theme → vision element → roadmap rock → spec.
 
 ```
-/new-project → /spec → build → /eval → /wrap-session → … → /release → /announce
-                 │                │           │                  │
-              what/why        evidence    docs update        changelog
-              before how      for the     + commit,          [Unreleased]
-                              decision    every session      → vX.Y.Z
+/research → /vision → /roadmap → /spec → build → /eval → /wrap-session → /release → /announce
+    ▲          │                    │               │           │             │
+    │       outcomes,           4–5 rocks       what/why    evidence      docs update
+    │       not features        force-ranked    before how  for the       + commit,
+    │                                                       decision      every session
+    └──────────────────── user feedback, new pain points ─────────────────────┘
 ```
 
 ## Installation
