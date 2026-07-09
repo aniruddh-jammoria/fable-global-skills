@@ -37,6 +37,9 @@ Use these sections in this order. Sections marked *(optional)* only if they earn
 
 ```markdown
 # Project Name
+Badge row (shields.io, one line): license, language/runtime version,
+package version, build status — see badge rules below.
+
 One-sentence description of what it does.
 
 Short paragraph: the problem it solves and why it exists (the "why").
@@ -44,6 +47,14 @@ Short paragraph: the problem it solves and why it exists (the "why").
 ## Demo
 Screenshot / GIF / terminal recording. If none exists yet, insert a
 placeholder comment: <!-- TODO: add screenshot/demo -->
+
+## How it works
+A short paragraph (or 3–5 numbered steps) bridging description to usage:
+what the user provides (input, config, credentials), what happens under
+the hood (the one-sentence version — pipeline, agent loop, transform),
+and what comes out at the end. A reader should finish it knowing the
+shape of the workflow before seeing a single command. Keep component
+depth out — that belongs in Architecture.
 
 ## Quick start
 Copy-paste-ready install + first-run commands, verified against the repo.
@@ -72,6 +83,19 @@ Links to CHANGELOG.md and docs/DEVLOG.md if they exist.
 ## Contributing                  (optional — link CONTRIBUTING.md if present)
 ## License
 ```
+
+## Badge rules
+
+- 3–6 badges, one row, directly under the title. Use shields.io static or
+  dynamic badges (e.g. `![License: MIT](https://img.shields.io/badge/license-MIT-blue)`,
+  `https://img.shields.io/badge/python-3.12%2B-blue`).
+- **Every badge must be derived from a repo fact**: license from LICENSE,
+  runtime version from the manifest (`requires-python`, `engines`), package
+  version from the registry if published, CI status only if a workflow exists.
+  Never guess a value; wrong badges are worse than none.
+- Worth including when true: license, language/runtime version, package
+  version, build/CI status, platform (CLI/web). Skip vanity badges: stars,
+  visitor counters, "PRs welcome", "made with" — they carry no information.
 
 ## Rules
 
