@@ -19,15 +19,17 @@ Never write a README from assumptions. Survey first:
 
 ## Step 2: Handle an existing README
 
-If `README.md` exists, **update it — do not rewrite it wholesale**:
+If `README.md` exists: **the structure below always wins; existing content is reused where it is accurate.** Consistency across repos is the point — an existing README that deviates from the structure gets restructured, not patched in place.
 
-1. Read it fully.
-2. Keep sections that are accurate and any intentional custom content (badges, credits, tone).
-3. Fix stale facts: commands that no longer work, features that changed, dead links.
-4. Add missing sections from the structure below; remove content that belongs in linked docs.
-5. If a section would be deleted or heavily rewritten and you are unsure it is obsolete, ask the user rather than silently dropping it.
+1. Read it fully and inventory its content: which facts, examples, and custom touches (badges, credits, acknowledgments) are accurate and worth keeping?
+2. **Rebuild the file in the canonical section order below**, migrating each piece of accurate existing content into the section where it belongs. Reuse good prose verbatim — restructuring is not an excuse to reword what already reads well.
+3. While migrating, fix stale facts: commands that no longer work, features that changed, dead links. Content that belongs in linked docs (deep API detail, contribution rules) moves out, replaced by a link.
+4. Preserved custom content that has no canonical section (badges at top, credits/acknowledgments near the end) keeps a sensible home — don't delete it just because the template doesn't name it.
+5. Drop content only when it is stale or redundant. If you are unsure whether something is obsolete, keep it and flag it to the user rather than silently dropping it.
 
-If none exists, create one from the structure below.
+The result must match the canonical structure even if the old README was organized completely differently. In your summary, list which sections' content was migrated, what was updated, and anything dropped or flagged.
+
+If no README exists, create one from the structure below.
 
 ## Step 3: Structure
 

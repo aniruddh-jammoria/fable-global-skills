@@ -20,7 +20,7 @@ Most projects accumulate documentation debt: the README goes stale, the changelo
 
 | Skill | What it does |
 |---|---|
-| [`/readme`](readme/SKILL.md) | Creates or updates `README.md` from what's actually in the code — verified quick-start commands, user-editable config surfaces, architecture overview. Updates existing READMEs instead of rewriting them. |
+| [`/readme`](readme/SKILL.md) | Creates or updates `README.md` from what's actually in the code — verified quick-start commands, user-editable config surfaces, architecture overview. Existing READMEs are normalized to one canonical structure, reusing content that's still accurate. |
 | [`/changelog`](changelog/SKILL.md) | Maintains `CHANGELOG.md` in [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format — curated, user-perspective entries, never commit dumps. |
 | [`/devlog`](devlog/SKILL.md) | Records the builder's side in `docs/DEVLOG.md` (dated entries: features, analyses, dead ends) and `docs/adr/` (one-page Architecture Decision Records for significant choices, append-only). |
 
