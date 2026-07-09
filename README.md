@@ -2,6 +2,8 @@
 
 A set of personal [Agent Skills](https://code.claude.com/docs/en/skills) for Claude Code that cover the full lifecycle of a software project — from first spec to public announcement — with documentation that maintains itself along the way.
 
+These skills were written with Claude Fable 5: each one distills how a frontier model approaches the task — the judgment calls, guardrails, and failure modes — into explicit instructions that guide smaller, faster models to execute it just as reliably.
+
 Most projects accumulate documentation debt: the README goes stale, the changelog is an afterthought, and the reasoning behind decisions evaporates. These skills make the paper trail a side effect of normal work instead of a chore — each one encodes a convention once (Keep a Changelog, ADRs, spec-before-code) and every project gets it for free.
 
 ## The skills
