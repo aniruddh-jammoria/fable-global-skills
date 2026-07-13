@@ -69,3 +69,11 @@ Keep it short (this is context loaded every session):
 ## Step 5: Summarize
 
 Report the tree that was created, the verified run/test commands, and the natural next step (write the first spec with the spec skill).
+
+## Gotchas
+
+Known failure modes — check them before finishing; append new ones as they surface.
+
+- **Scaffolding over existing files** — a non-empty target directory halts everything until the user confirms.
+- **Unverified entry point** — the "hello" behavior must actually run before finishing; a scaffold that doesn't start is a broken promise.
+- **Unprompted public repo** — `gh repo create` is outward-facing; always ask first.

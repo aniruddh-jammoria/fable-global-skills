@@ -80,3 +80,11 @@ List the negative consequences too.
 - DEVLOG entries are also never rewritten later — corrections get a new entry.
 - Dates (entry headings, ADR Date lines) come from the system clock (`date` / `Get-Date`) or git — never from memory. Convert relative dates ("yesterday") to absolute.
 - Don't duplicate the changelog: user-visible outcomes go there; reasoning and process go here. Cross-link instead of repeating.
+
+## Gotchas
+
+Known failure modes — check them before finishing; append new ones as they surface.
+
+- **Idealized narratives** — the entry records what actually happened, dead ends included; a tidy story that omits the failed attempt erases the entry's value.
+- **Edited history** — past entries and accepted ADRs are immutable; corrections are new entries, supersessions are new ADRs.
+- **ADR inflation** — routine implementation choices stay in the DEVLOG; when in doubt, no ADR.

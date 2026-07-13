@@ -7,6 +7,17 @@ description: Cut a versioned release - pre-flight checks, choose the semver bump
 
 Releasing is deliberate: every step gates the next, and the user confirms the version before anything irreversible happens.
 
+Copy this checklist and check items off as you complete them:
+
+```
+Release progress:
+- [ ] 1. Pre-flight passed: clean tree, tests, [Unreleased] non-empty, README quick start
+- [ ] 2. Version proposed and CONFIRMED BY THE USER
+- [ ] 3. Changelog promoted, manifest bumped
+- [ ] 4. Committed, tagged, pushed, GitHub release drafted
+- [ ] 5. Summary with tag + release URL
+```
+
 ## Step 1: Pre-flight (all must pass)
 
 1. Working tree clean (`git status`) — uncommitted work means run the **wrap-session** skill first.
@@ -22,6 +33,8 @@ Read `[Unreleased]` and propose a semver bump from the current version (manifest
 - Breaking change for users → **major** (while pre-1.0, breaking → minor is acceptable; say so).
 - New features (`Added`) → **minor**.
 - Only fixes/tweaks → **patch**.
+
+If the changelog uses calendar versions (`[YYYY.MM.DD]`) or dated milestones instead of semver, the proposed version is today's date from the system clock — no bump reasoning needed.
 
 **Ask the user to confirm the version number before proceeding.** This is the one mandatory pause.
 
@@ -42,3 +55,11 @@ Package registry publishing (npm, PyPI) is **not** part of this skill — only d
 ## Step 5: Summarize
 
 Report: version released, tag, GitHub release URL, and the headline changes. If any step was skipped (no remote, no `gh`), say which and how to finish manually.
+
+## Gotchas
+
+Known failure modes — check them before finishing; append new ones as they surface.
+
+- **Skipping the version pause** — the user must confirm the version number explicitly; "release it" is not consent to a specific version.
+- **Releasing around a failed check** — a dirty tree, failing tests, or an empty [Unreleased] each halt the release; fix, don't work around.
+- **Dates or versions from memory** — the version comes from the manifest/tags, the date from the system clock.

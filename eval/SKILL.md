@@ -37,7 +37,7 @@ Check `evals/` and `docs/evals/` first — extend an existing harness/dataset ra
 
 ## Step 4: Run
 
-**Gate before running:** state the run's size to the user and get confirmation first — cases × options × judge calls per case = total LLM calls, with a rough cost estimate. Suggest a 5-case smoke run first when the total is large.
+**Gate before running:** state the run's size to the user and get confirmation first — cases × options × judge calls per case = total LLM calls, with a rough cost estimate. Suggest a 5-case smoke run first when the total is large. Non-interactive fallback: if the user cannot be asked, run only the ~5-case smoke set and report results as directional — never launch the full run unconfirmed.
 
 - Model access: reuse the project's existing LLM client and configuration. If the project has no working way to call a model (no client, no key), **stop and tell the user** — do not write a runner that can't execute.
 - A small runner script in `evals/` (stack-appropriate) that takes option + dataset and emits per-case results to a file — so runs are repeatable and diffable. Prefer the project's existing eval tooling if any.
@@ -82,3 +82,11 @@ What to re-test later; cases to add to the dataset.
 - One-line devlog entry (type: analysis) linking the report.
 - If the decision is architectural (model choice, agent design), also write an ADR referencing the eval as evidence.
 - Report results faithfully: an inconclusive eval written up honestly is a valid outcome — never overstate a thin margin as a clear win.
+
+## Gotchas
+
+Known failure modes — check them before finishing; append new ones as they surface.
+
+- **Fabricated results** — the cardinal sin: every number traces to a run whose per-case outputs exist on disk; an empty cell beats an estimated one.
+- **"Rate 1–10" judges** — open scales are noisy and non-deterministic; closed-ended rubric questions only.
+- **Ungated runs** — cases × options × judge calls gets stated and confirmed before spending; when in doubt, smoke run first.

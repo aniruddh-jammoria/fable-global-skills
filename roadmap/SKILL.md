@@ -11,7 +11,7 @@ Pick the few large things worth building next — **big rocks** — by finding w
 
 1. **Where we're going:** `docs/VISION.md`. If none exists, flag it prominently, proceed from pain points alone, and recommend running the **vision** skill.
 2. **Where we are:** the current product — README, CHANGELOG, specs, the code's actual capabilities.
-3. **What hurts users most:** pain-point inventories in `docs/research/` and `docs/feedback/`, with their scores.
+3. **What hurts users most:** pain-point inventories in `docs/research/`, with their scores — first-party feedback reports weigh heaviest when they exist.
 
 If `docs/ROADMAP.md` exists, read it fully — this is an update: carry statuses forward, move shipped rocks to Shipped, and re-rank only with reason.
 
@@ -24,7 +24,7 @@ Diff vision against current state: which vision outcomes does the product not ye
 - **4–5 rocks maximum, force-ranked.** Refuse to add a sixth — something must drop to "Not now" first. A 12-item roadmap is a backlog wearing a costume.
 - **Rocks are customer outcomes, not features.** "A new user gets value in under two minutes" — not "build onboarding wizard". The spec decides the how later; the roadmap must not pre-decide implementations.
 - **Horizons, not dates:** Now (1–2 rocks, the only ones with commitment language), Next (2–3), Later (unordered pool).
-- **ICE scoring as a sanity check** (impact × confidence × ease, 1–10 each): all numbers are the **user's estimates, elicited from them and labeled as estimates** — never model-invented figures presented as data. Scoring informs the ranking; the user's judgment makes the final call.
+- **ICE scoring as a sanity check** (impact × confidence × ease, 1–10 each): all numbers are the **user's estimates, elicited from them and labeled as estimates** — never model-invented figures presented as data. Scoring informs the ranking; the user's judgment makes the final call. Non-interactive fallback: if the user cannot be asked, leave ICE blank and rank on evidence strength alone — never fill in the numbers yourself.
 - A rock with no evidence or vision link gets labeled **"pet project — no evidence"**. The user may keep it (their call), but the label stays in the document.
 
 ## Step 4: Write `docs/ROADMAP.md`
@@ -68,3 +68,11 @@ Last reviewed: YYYY-MM-DD   (date from the system clock, never from memory)
 - The "Not now" list is half the document's value — every cut gets a reason, so decisions aren't relitigated from scratch.
 - No implementation detail anywhere in the roadmap; that's the spec's job.
 - Review notes are appended to the Review log; history is never rewritten.
+
+## Gotchas
+
+Known failure modes — check them before finishing; append new ones as they surface.
+
+- **The sixth rock** — pressure to add "just one more"; refuse until something drops to "Not now".
+- **Invented ICE numbers** — scores are elicited from the user; blank beats fabricated.
+- **Features wearing outcome costumes** — "build onboarding wizard" reworded is still a feature; the test is whether the statement names a customer result.

@@ -47,10 +47,18 @@ Each entry:
 
 ## Step 4: Releasing a version (only when asked)
 
-When the user cuts a release, rename `[Unreleased]` to `[X.Y.Z] - YYYY-MM-DD` (semver: breaking → major, feature → minor, fix → patch), and add a fresh empty `[Unreleased]` above it. For projects without formal versions, dated milestone headings (`## 2026-07-09`) are acceptable — follow whichever convention the file already uses.
+When the user cuts a release, rename `[Unreleased]` to `[X.Y.Z] - YYYY-MM-DD` (semver: breaking → major, feature → minor, fix → patch), and add a fresh empty `[Unreleased]` above it. For projects without formal versions, calendar versions (`## [2026.07.13]`, promoted at release/push time) or dated milestone headings (`## 2026-07-09`) are acceptable — follow whichever convention the file already uses; the file's header should state which scheme it follows.
 
 ## Rules
 
 - Newest entries at the top; never rewrite or delete released entries.
 - Never fabricate dates or versions — versions come from tags/manifest; dates come from git history or from the environment (`git log -1 --format=%cd --date=short`, or the system clock via `date` / `Get-Date`). Never write a date from memory.
 - If a change is user-visible **and** involved a notable decision, it appears in both the changelog (the what) and the devlog (the why) — one line each, different framing.
+
+## Gotchas
+
+Known failure modes — check them before finishing; append new ones as they surface.
+
+- **Commit-dump entries** — file or function names in an entry mean it was written from the diff, not the user's perspective; git log is raw material to curate.
+- **Duplicate [Unreleased] lines** — read what's already there first; a change logged earlier in the session gets updated, not re-appended.
+- **Dates from memory** — dates come from git or the system clock, always.

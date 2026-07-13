@@ -105,3 +105,11 @@ Links to CHANGELOG.md and docs/DEVLOG.md if they exist.
 - Write in plain, direct language. No filler ("blazingly fast", "simple yet powerful") unless demonstrably true.
 - If the repo has a `CHANGELOG.md` or `docs/DEVLOG.md`, always link them from the README.
 - State clearly in your summary which sections you added, updated, and preserved.
+
+## Gotchas
+
+Known failure modes — check them before finishing; append new ones as they surface.
+
+- **Invented commands** — a plausible-looking `npm run dev` that isn't in the manifest is worse than no quick start; verify every command and flag.
+- **Guessed badge values** — badges derive from repo facts (LICENSE, manifest, workflows); never guess a version or CI status.
+- **Deleted custom content** — badges, credits, and acknowledgments without a canonical section keep a sensible home; unsure means keep and flag, not drop.

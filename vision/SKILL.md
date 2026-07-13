@@ -1,6 +1,6 @@
 ---
 name: vision
-description: Consolidate accumulated pain-point evidence (docs/research/, docs/feedback/, eval and devlog learnings) into themes and draft or revise docs/VISION.md - a customer-outcome product vision - what best-in-class looks like, what it does for the customer, and what it deliberately is not. Use when the user wants a product vision drafted, revised, or checked against new evidence.
+description: Consolidate accumulated pain-point evidence (docs/research/ reports, eval and devlog learnings) into themes and draft or revise docs/VISION.md - a customer-outcome product vision - what best-in-class looks like, what it does for the customer, and what it deliberately is not. Use when the user wants a product vision drafted, revised, or checked against new evidence.
 ---
 
 # Draft or Revise the Product Vision
@@ -9,7 +9,7 @@ A vision articulates the ideal solution **in terms of what it does for the custo
 
 ## Step 1: Consolidate the evidence (mechanical, before any imagination)
 
-Read everything on disk: `docs/research/*.md`, `docs/feedback/*.md`, relevant `docs/DEVLOG.md` and `docs/evals/` entries. Cluster the pain points into **3–6 themes**, each listing the reports/quotes it draws from.
+Read everything on disk: `docs/research/*.md` (market research and first-party feedback reports alike), relevant `docs/DEVLOG.md` and `docs/evals/` entries. Cluster the pain points into **3–6 themes**, each listing the reports/quotes it draws from.
 
 - If `docs/VISION.md` exists, this is a **revision**: read it fully, judge which parts new evidence supports, contradicts, or leaves untouched.
 - If there is **no research on disk**, say so plainly. You may still draft from the user's own hypotheses, but the document gets a prominent label at the top: `Status: Hypothesis — unvalidated (no research evidence on disk)`.
@@ -22,6 +22,8 @@ Evidence can't answer everything. Ask (3–5 questions max, spec-skill style):
 - Refusals: what will you never build, even if users ask?
 
 Push back on answers that describe features instead of customer outcomes — that is the #1 vision failure mode. Re-anchor every "it has X" as "the customer can Y".
+
+Non-interactive fallback: if the user cannot be asked, skip the interview — draft from the evidence on disk alone and mark appetite, differentiation, and refusal points as `(assumed — confirm with user)`.
 
 ## Step 3: Imagine best-in-class
 
@@ -74,3 +76,11 @@ Theme → linked research/feedback reports.
 - Every claim about customers cites a theme; every theme cites evidence on disk. Claims without evidence are labeled as the user's hypothesis.
 - Vision stays at the outcome level — no feature lists, no implementation. Features belong in the roadmap's rocks and the specs.
 - Keep it to 1–2 pages; a vision nobody rereads is furniture.
+
+## Gotchas
+
+Known failure modes — check them before finishing; append new ones as they surface.
+
+- **Feature-list drift** — "it has X" creeping back in; every line must survive rephrasing as "the customer can Y".
+- **Silent rewrites** — any body change without a dated Revision history line destroys the document's trustworthiness.
+- **Unearned "Grounded" status** — no research on disk means `Status: Hypothesis`, prominently, however confident the user sounds.

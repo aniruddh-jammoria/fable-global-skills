@@ -7,6 +7,17 @@ description: Close out a work session - verify the changes work, update CHANGELO
 
 Close the session so the repo is left consistent: working code, updated docs, clean commits. Run the steps in order; report what each produced in the final summary.
 
+Copy this checklist and check items off as you complete them:
+
+```
+Wrap-up progress:
+- [ ] 1. Take stock — anything meaningful to wrap?
+- [ ] 2. Work verified (STOP here if verification fails)
+- [ ] 3. Docs updated: changelog / devlog / README drift
+- [ ] 4. Committed — staging reviewed, no blanket add
+- [ ] 5. Summary reported
+```
+
 ## Step 1: Take stock
 
 - `git status` and `git diff` (plus untracked files) to see everything this session touched.
@@ -37,3 +48,11 @@ Each sub-step is an action, not a narration — actually perform it and confirm 
 ## Step 5: Summarize
 
 End with a short report: what was verified (and how), which docs were updated, what was committed, and anything left open for next session (also record open items in the devlog entry's Outcome line).
+
+## Gotchas
+
+Known failure modes — check them before finishing; append new ones as they surface.
+
+- **Documenting unverified work** — Step 2 failing means stop; "the diff looks right" is not verification.
+- **Blanket staging** — `git add -A` sweeps in secrets, `.env` files, and build artifacts; stage by name after reading the untracked list.
+- **Manufactured entries** — a session with nothing meaningful produces no changelog or devlog lines; don't invent substance to have something to log.

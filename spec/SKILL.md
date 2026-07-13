@@ -22,6 +22,8 @@ Act like a good product counterpart, not a stenographer:
 - Name trade-offs and make the user choose rather than choosing silently.
 - 3–6 questions total, then write. A spec that ships beats an interview that doesn't end.
 
+Non-interactive fallback: if the user cannot be asked, draft from what's known, put every unanswered essential in Open questions, and leave Status: Draft.
+
 ## Step 2: Write the spec
 
 File: `docs/specs/YYYY-MM-DD-<feature-slug>.md` (create `docs/specs/` if needed; date from the system clock — `date` / `Get-Date` — never from memory). Check for an existing spec on the same topic first — update it rather than duplicating.
@@ -69,3 +71,11 @@ Later: everything deliberately deferred.
 - Specs describe product behavior, not implementation. No file names, schemas, or library choices — those belong in the plan and in ADRs.
 - One spec per feature; a project-level spec is fine for a brand-new project.
 - Never skip Non-goals — it is the section that does the most work.
+
+## Gotchas
+
+Known failure modes — check them before finishing; append new ones as they surface.
+
+- **Implementation leakage** — file names, schemas, and library choices don't belong; the spec answers what and why, never how.
+- **Skipped Non-goals** — the section that does the most work is the easiest to omit under time pressure.
+- **The interview that never ends** — 3–6 questions, then write; a shipped draft beats a perfect intake.

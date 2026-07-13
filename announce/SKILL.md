@@ -44,3 +44,11 @@ Include a `notes.md` in the folder: suggested timing (Tue–Thu, ~10:00–13:00 
 - Banned register: "revolutionary", "game-changing", "blazingly", superlatives generally. Write like a person explaining what they made to a friend.
 - First person, the user's voice. If their previous announcement drafts exist in `docs/announcements/`, match their established voice.
 - Every draft ends with a note that the user should review and edit before posting — these are starting points, not final copy.
+
+## Gotchas
+
+Known failure modes — check them before finishing; append new ones as they surface.
+
+- **Posting anything** — this skill drafts; publishing is always a human act, even when credentials are available.
+- **Invented traction** — no metrics, user counts, or results that don't come from the repo's own record.
+- **One post reworded four ways** — each platform gets a natively different piece; a LinkedIn post with a Show HN title is neither.
