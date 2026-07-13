@@ -29,13 +29,13 @@ If the top entry already covers this session's work (written earlier in the same
 ```markdown
 ## 2026-07-09 — Short title of what happened
 
-**Type:** feature | analysis | simplification | experiment | fix
-**Context:** Why this work was picked up (1–2 sentences).
-**What was done:** The substance — what was built/analyzed/removed and the key
-findings or trade-offs. Include what was tried and rejected; documented dead
-ends save future readers from repeating them.
-**Outcome:** Result and follow-ups. Link related ADRs (adr/0003-....md),
-notable commits, or changelog entries.
+- **Type:** feature | analysis | simplification | experiment | fix
+- **Context:** Why this work was picked up (1–2 sentences).
+- **What was done:** The substance — what was built/analyzed/removed and the key
+  findings or trade-offs. Include what was tried and rejected; documented dead
+  ends save future readers from repeating them.
+- **Outcome:** Result and follow-ups. Link related ADRs (adr/0003-....md),
+  notable commits, or changelog entries.
 ```
 
 Keep entries honest and specific — "reduced the agent loop from 3 LLM calls to 1 by batching tool results; latency dropped ~40%" beats "improved performance". Write the entry from what actually happened in the session, not an idealized narrative.

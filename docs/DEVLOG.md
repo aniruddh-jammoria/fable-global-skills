@@ -4,13 +4,13 @@ Newest entries first.
 
 ## 2026-07-13 — Best-practices review and smaller-model hardening
 
-**Type:** analysis
-**Context:** Reviewed all twelve skills against Anthropic's skill-authoring
+- **Type:** analysis
+- **Context:** Reviewed all twelve skills against Anthropic's skill-authoring
 guidance (the platform best-practices doc, "Equipping agents for the real
 world with Agent Skills", and the Claude Code skills lessons post) to check
 the repo's core premise: Fable-written skills that smaller models execute
 reliably.
-**What was done:** Findings — descriptions (what + when, third person,
+- **What was done:** Findings — descriptions (what + when, third person,
 keyword-rich), conciseness (~50–110 lines vs the 500-line budget),
 composition with inline fallbacks, and the anti-fabrication guardrails
 already match official guidance. Gaps were the improvement loop and a
@@ -26,7 +26,7 @@ and rejected a separate /feedback skill — research's scoring rubric already
 fits, and this repo stays skills-only (target projects hold the `docs/`
 artifacts, not this repo; the changelog and this devlog are the exception,
 since the repo is itself a project).
-**Outcome:** All twelve skills hardened and re-linked into
+- **Outcome:** All twelve skills hardened and re-linked into
 `~/.claude/skills` via sync.sh. Adopted calendar versioning for the
 changelog (every push is a release; Keep a Changelog has no rolling-release
 convention, but doesn't require SemVer either) — convention recorded in

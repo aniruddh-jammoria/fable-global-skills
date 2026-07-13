@@ -8,6 +8,11 @@ and is promoted to a dated version at push time.
 
 ## [Unreleased]
 
+## [2026.07.13.2]
+
+### Fixed
+- The devlog skill's entry template rendered Type/Context/What/Outcome as one run-on paragraph; the fields are now list items so each renders as its own bullet
+
 ## [2026.07.13.1]
 
 ### Added
