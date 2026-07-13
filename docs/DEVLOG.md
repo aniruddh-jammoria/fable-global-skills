@@ -31,8 +31,11 @@ since the repo is itself a project).
 changelog (every push is a release; Keep a Changelog has no rolling-release
 convention, but doesn't require SemVer either) — convention recorded in
 CLAUDE.md, and the changelog + release skills now recognize
-calendar-versioned files in any project. Open backlog: frontmatter linter wired into
-sync.sh, a not-a-symlink guard before sync.sh's `rm -rf`, per-platform
-split of the announce skill (progressive disclosure), eval-driven gotcha
-harvesting from real Haiku/Sonnet runs, and a possible /demo skill for the
-screenshot/GIF gap that readme and announce both point at.
+calendar-versioned files in any project. Later the same session: built
+validate.sh (frontmatter + convention linter, run by sync.sh before
+linking) and the not-a-symlink guard before sync.sh's `rm -rf` — both
+verified, including negative tests (malformed skill caught with exit 1; a
+real directory in ~/.claude/skills survives a sync untouched). Remaining
+ideas moved to BACKLOG.md (announce per-platform split, PowerShell port of
+validate.sh); eval-driven gotcha harvesting and a /demo skill were
+deliberately dropped for now rather than backlogged.

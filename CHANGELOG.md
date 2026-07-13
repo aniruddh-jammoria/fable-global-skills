@@ -8,6 +8,15 @@ and is promoted to a dated version at push time.
 
 ## [Unreleased]
 
+## [2026.07.13.1]
+
+### Added
+- `validate.sh`: lints every SKILL.md against the Agent Skills frontmatter constraints (name/description limits, reserved words, 500-line body) and repo conventions (Gotchas section, name matches directory); `sync.sh` runs it before linking and aborts on failure
+- `BACKLOG.md` for improvement ideas and observed-but-unconfirmed gotchas
+
+### Fixed
+- `sync.sh` now refuses to overwrite a destination that exists but is not a symlink, instead of silently `rm -rf`-ing it
+
 ## [2026.07.13]
 
 ### Added
