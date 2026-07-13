@@ -80,13 +80,14 @@ To make the documentation loop automatic in a project, add one line to its `CLAU
 
 ## Design notes
 
-A few rules run through all nine skills, aimed at making them safe for any model to execute:
+A few rules run through all twelve skills, aimed at making them safe for any model to execute:
 
 - **Update, never regenerate.** Every skill reads existing artifacts first and appends or amends; released changelog entries, accepted ADRs, and devlog history are immutable.
 - **Verify before documenting.** `wrap-session` refuses to log or commit work that fails its checks; `eval` forbids simulated or estimated results — every reported number must come from a run whose per-case outputs exist on disk.
 - **Gates on irreversible actions.** Creating a public repo, confirming a release version, and running a large eval all require explicit confirmation; `announce` never publishes, only drafts.
 - **Dates from the clock, not from memory.** Anything that writes a dated file or entry gets the date from the system or git.
-- **Graceful degradation.** Cross-skill calls carry inline fallbacks, so a step is performed minimally rather than skipped if a referenced skill is missing.
+- **Graceful degradation.** Cross-skill calls carry inline fallbacks, so a step is performed minimally rather than skipped if a referenced skill is missing. Skills that normally interview the user also carry a non-interactive fallback: conservative defaults, with every assumption labeled in the output.
+- **Gotchas as memory.** Every skill ends with a Gotchas section — known failure modes checked before finishing, and the append point for new ones observed in real use. Skills grow by accumulating gotchas, not by rewrites.
 
 ## Repository structure
 
